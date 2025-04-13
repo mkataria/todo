@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+/server/node_modules/
+/client/todo-frontend/node_modules/
+
+# Build outputs
+/client/todo-frontend/dist/
+/server/dist/
+/server/build/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE files
+.vscode/
+.idea/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+*.log
+
+# Testing
+/coverage
+/client/todo-frontend/coverage/
+/server/coverage/
+
+# Misc
+.DS_Store
+*.pem
+Thumbs.db

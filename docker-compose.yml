@@ -1,0 +1,28 @@
+services:
+  backend:
+    build: ./server
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./server:/app
+    environment:
+      - NODE_ENV=development
+    networks:
+      - todo-network
+  frontend:
+    build: ./client/todo-frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./client/todo-frontend:/app
+      - /app/node_modules
+    environment:
+      - VITE_API_URL=http://backend:3000
+      - NODE_ENV=development
+    depends_on:
+      - backend
+    networks:
+      - todo-network
+networks:
+  todo-network:
+    driver: bridge

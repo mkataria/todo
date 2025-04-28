@@ -13,3 +13,7 @@ app.get('/time', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
+
+//why module.export and not export default?
+// In Node.js, module.exports is used to export a single value from a module.
+module.exports = app;
